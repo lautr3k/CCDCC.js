@@ -60,7 +60,7 @@ button {
 	display: none;
 }
 
-#controls, #inputBox label, #outputBox label {
+#controls, #inputLabel, #outputLabel {
 	font-size: 2em;
 	display: inline-block;
 	vertical-align: middle;

@@ -71,11 +71,15 @@ function convert() {
 // the converter
 var ccdcc = new CCDCC();
 
-// output file name
-var output_filename = 'output.CCDCC.nc';
+// I/O file name
+var input_filename  = 'drills.nc';
+var output_filename = 'drills.CCDCC.nc';
 
-// load initial value
-updateInput();
+// load demo file contents
+$.get('./nc/' + input_filename, function(data) {
+    $('#input').val(data);
+    updateInput();
+});
 
 // events
 $('#input').on('change', updateInput);
@@ -85,3 +89,11 @@ $('#inputFile, #input').on('drop', onInputFileChange);
 $('#convertButton').on('click', convert);
 $('#openFileButton').on('click', openFile);
 $('#saveFileButton').on('click', saveFile);
+$('#dwell').on('change', function(e) {
+    ccdcc.dwell_unity = $('#dwell').val();
+    convert();
+});
+$('#clean').on('change', function(e) {
+    ccdcc.remove_duplicate = $('#clean').prop('checked');
+    convert();
+});

@@ -35,49 +35,24 @@
                         <button id="openFileButton" class="__file_support">open file</button>
                         <button id="convertButton">convert</button>
                     </span>
-                    <textarea id="input" name="input">
-(CamBam Style)
-(Cycle 1)
-S1000
-G0 Z5.0
-G0 X10.0 Y10.0
-G98
-G81 X10.0 Y10.0 Z0.0 R20.0 F100.0
-G81 X20.0 Z0.0
-G81 X30.0 Z0.0
-G80
-(Cycle 2)
-S1000
-G0 Z25.0
-G0 X30.0 Y20.0
-G99
-G81 X30.0 Y20.0 Z0.0 R15.0 F150.0
-G81 X20.0 Z0.0
-G81 X10.0 Z0.0
-G80
-(Cycle 3)
-S1000
-G0 Z80.0
-G0 X10.0 Y30.0
-G98 G81 X10.0 Y30.0 Z0.0 R50.0 F80.0
-G81 X20.0 Z0.0
-G81 X30.0 Z0.0
-G80
-(Cycle 4)
-S1000
-G0 Z100.0
-G0 X30.0 Y40.0
-G99 G81 X30.0 Y40.0 Z0.0 R50.0 F200.0
-G81 X20.0 Z0.0
-G81 X10.0 Z0.0
-G80
-                    </textarea>
+                    <textarea id="input" name="input"></textarea>
                 </div>
                 <div id="outputBox" class="box">
                     <label id="outputLabel" for="output">Output</label>
                     <span id="outputInfos">
                         <span class="info">chars = <span id="output_chars">n/a</span></span>
                         <span class="info">lines = <span id="output_lines">n/a</span></span>
+                        <label for="dwell">dwell in
+                            <select id="dwell" name="dwell">
+                                <option value="S">seconds</option>
+                                <option value="P">millis</option>
+                            </select>
+                        </label>
+                        <label for="clean">
+                            <input type="checkbox" id="clean" name="clean" value="true" checked="checked" />
+                            remove duplicate line
+                        </label>
+                        <button id="convertButton">convert</button>
                         <button id="saveFileButton" class="__file_saver_support">save file</button>
                     </span>
                     <textarea id="output" name="output"></textarea>
